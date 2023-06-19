@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Carrinho de Compras</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      input[type='text'],
+      input[type='number'] {
+        padding: 5px;
+        width: 100%;
+      }
+
+      button {
+        padding: 8px 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Carrinho de Compras</h1>
+
+    <form id="product-form">
+      <label for="quantity">Quantidade:</label>
+      <input type="number" id="quantity" required />
+      <label for="description">Descricao:</label>
+      <input type="text" id="description" required />
+      <label for="unit-price">Valor Unitario:</label>
+      <input type="number" id="unit-price" required />
+      <button type="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+    </form>
+
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>Quantidade</th>
+          <th>Descricao</th>
+          <th>Valor Unitario</th>
+          <th>Valor Total</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Total:</td>
+          <td id="cart-total">R$ 0.00</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>
